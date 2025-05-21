@@ -5,6 +5,7 @@ import os
 import nibabel as nib
 from torch.utils.data import random_split
 import torchvision.transforms as transforms
+import matplotlib.pyplot as plt
 
 
 SIZE_W = 256

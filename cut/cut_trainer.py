@@ -17,7 +17,7 @@ class CUTTrainer():
         self.real_us_train_loader = real_us_train_loader
         self.init_cut = True
         self.cut_plot_figs = []
-        self.data_cut_real_us = []
+        self.data_cut_real_us = {}
         self.plotter = Plotter()
         self.cut_model = cut_create_model(opt_cut)   
 

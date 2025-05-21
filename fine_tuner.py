@@ -8,7 +8,7 @@ import helpers
 from models.us_rendering_model import UltrasoundRendering
 
 
-class Trainer:
+class FineTuner:
     def __init__(self, hparams, opt_cut, plotter):
         self.hparams = hparams
         self.opt_cut = opt_cut

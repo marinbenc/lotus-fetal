@@ -28,11 +28,11 @@ if __name__ == "__main__":
     plotter = Plotter()    
     trainer = trainer.Trainer(hparams, opt_cut, plotter) 
     
-    seg_network_ckpt = './checkpoints/best_checkpoint_seg_renderer_test_loss_XXXXXX.pt'     #replace with your ckpt after training
-    trainer.module.load_state_dict(torch.load())
+    seg_network_ckpt = 'checkpoints/best_checkpoint_seg_renderer_valid_loss_335_exp_name13_5e-06_0.0001_0.0001_epoch=1.pt'     #replace with your ckpt after training
+    trainer.module.load_state_dict(torch.load(seg_network_ckpt))
     
-    cut_network_ckpt = './checkpoints/best_checkpoint_CUT_XXXXX.pt'     #replace with your ckpt after training
-    checkpoint = torch.load()
+    cut_network_ckpt = 'checkpoints/best_checkpoint_CUT_val_loss_335_exp_name13_5e-06_0.0001_0.0001_epoch=1.pt'     #replace with your ckpt after training
+    checkpoint = torch.load(cut_network_ckpt)
     # Create a new dictionary with keys without the "module." prefix
     new_state_dict = {k.replace("module.", ""): v for k, v in checkpoint.items()}
     trainer.cut_trainer.cut_model.netG.load_state_dict(new_state_dict)
